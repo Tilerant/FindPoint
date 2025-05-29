@@ -2,23 +2,37 @@
 <html lang="zh">
 <head>
   <meta charset="UTF-8">
-  <title>FindPoint</title>
-  <!-- 引入 Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>AI 历史与前沿</title>
+  <script type="text/javascript" src="https://unpkg.com/vis-network@9.1.2/dist/vis-network.min.js"></script>
+  <link href="https://unpkg.com/vis-network@9.1.2/dist/vis-network.min.css" rel="stylesheet" />
   <style>
-    body {
-      background-color: #f8f9fa;
+    #mynetwork {
+      width: 100%;
+      height: 90vh;
+      border: 1px solid lightgray;
     }
   </style>
 </head>
-<body class="d-flex justify-content-center align-items-center vh-100">
+<body>
+  <h2 style="text-align:center;">AI 发展脉络图</h2>
+  <div id="mynetwork"></div>
 
-  <div class="text-center">
-    <h1 class="text-primary shadow p-4 bg-white rounded">欢迎来到FindPoint</h1>
-  </div>
-
-  <!-- 可选：引入 Bootstrap JS（如果将来需要交互） -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    fetch('data.json')
+      .then(response => response.json())
+      .then(data => {
+        const container = document.getElementById('mynetwork');
+        const options = {
+          layout: {
+            hierarchical: {
+              direction: "LR",  // 从左到右
+              sortMethod: "directed"
+            }
+          },
+          physics: false
+        };
+        const network = new vis.Network(container, data, options);
+      });
+  </script>
 </body>
 </html>
-
