@@ -1,0 +1,11 @@
+{
+  "nodes": [
+    { "id": 1, "label": "1950\n图灵测试", "year": 1950 },
+    { "id": 2, "label": "1986\n反向传播", "year": 1986 },
+    { "id": 3, "label": "2012\nImageNet", "year": 2012 }
+  ],
+  "edges": [
+    { "from": 1, "to": 2 },
+    { "from": 2, "to": 3 }
+  ]
+}
