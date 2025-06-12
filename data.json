@@ -1,41 +1,14 @@
 {
   "nodes": [
-    {
-      "id": 1,
-      "label": "图灵测试\n提出机器思维可测性标准",
-      "shape": "box",
-      "color": {
-        "background": "#e0f7fa",
-        "border": "#00796b"
-      },
-      "font": {
-        "multi": true,
-        "size": 16,
-        "bold": {
-          "ital": false,
-          "mod": "first"
-        }
-      }
-    },
-    {
-      "id": 2,
-      "label": "反向传播\n神经网络训练革命性突破",
-      "shape": "box",
-      "color": {
-        "background": "#fff3e0",
-        "border": "#e65100"
-      },
-      "font": {
-        "multi": true,
-        "size": 16,
-        "bold": {
-          "ital": false,
-          "mod": "first"
-        }
-      }
-    }
+    { "id": "1", "title": "简介", "url": "https://yourdomain.com/intro" },
+    { "id": "2", "title": "方法A", "url": "https://yourdomain.com/method-a" },
+    { "id": "3", "title": "方法B", "url": "https://yourdomain.com/method-b" },
+    { "id": "4", "title": "总结", "url": "https://yourdomain.com/conclusion" }
   ],
-  "edges": [
-    { "from": 1, "to": 2 }
+  "links": [
+    { "source": "1", "target": "2" },
+    { "source": "1", "target": "3" },
+    { "source": "2", "target": "4" },
+    { "source": "3", "target": "4" }
   ]
 }
